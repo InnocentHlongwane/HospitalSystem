@@ -1,0 +1,40 @@
+<p>appointment works!</p>
+<mat-card>
+    patient ID:<mat-form-field>
+        <input  type="datetime" matInput placeholder="enter Patient ID" onfocus="this.value= ''" [(ngModel)] = "id">
+      </mat-form-field><br>
+
+    Appointment Date:<mat-form-field>
+            <input  type="datetime" matInput placeholder="enter Date" onfocus="this.value= ''" [(ngModel)] = "APDate">
+          </mat-form-field><br>
+         
+          
+          Reason For Appointment:<mat-form-field>
+            <input matInput placeholder="enter Reason" onfocus="this.value= ''" [(ngModel)] = "ApReason">
+        </mat-form-field><br>
+
+        Doctor: <mat-form-field>
+      <select matNativeControl required onfocus="this.value=''" [(ngModel)]="doc_ID">
+            <option value = "Morgan">DR Morgan</option>
+            <option value="Bethal">DR Bethal</option>
+            <option value="Moagi">DR Moagi</option>
+            <option value="MooKi">DR Mooki</option>
+                </select>
+        </mat-form-field><br>
+    
+    
+          <button mat-raised-button color ="primary"(click)="AddAppointInfo(APP_ID, APDate,ApReason,DoctorName)">SAVE</button>
+          <button mat-fab color="primary" [routerLink]="['/patient']" >Back</button>
+        </mat-card>
+        <mat-card>
+                <table matSort (matSortChange)="sortData($event)">     
+                        <tr *ngFor ="let newApppoint of patientsz"> 
+                          <td>{{newApppoint.id}} </td>        
+                          <td>{{newApppoint.ApDate}} </td>  
+                          <td>{{newApppoint.AppReason}} </td>    
+                          <td>{{newApppoint.DName}} </td>
+                          <td><button mat-raised-button color ="primary" (click)="RemovePatientInfo(newAppoint)">delete Patient</button></td>
+                          <td><button mat-raised-button color ="primary" (click)="EditPatientInfo(newAppoint)">Edit Patient Info</button></td>
+                          </tr>
+                      </table>  
+        </mat-card>

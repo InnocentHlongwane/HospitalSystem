@@ -1,0 +1,39 @@
+<p>admin works!</p>
+<mat-card Styl="text-align:center">
+    <h3> patient details </h3>
+    <mat-form-field>
+    <input matInput placeholder ="patient ID" [(ngModel)]="PID"/>
+    </mat-form-field><br>
+    
+    <mat-form-field>
+    <input matInput placeholder ="patient name "[(ngModel)]= "Pname"/>
+    </mat-form-field><br>
+    
+    <mat-form-field>
+    <input matInput placeholder ="patient surname" [(ngModel)]="Psurname"/>
+    </mat-form-field><br>
+    
+    <mat-form-field>
+    <input matInput placeholder ="patient address" [(ngModel)]="Paddress"/>
+    </mat-form-field><br>
+    
+    <mat-form-field>
+    <input matInput placeholder ="patient town "[(ngModel)]= "Ptown"/>
+    </mat-form-field><br>
+    
+    <button mat-fab color ="primary" (click)="addPatient(PID,Pname, Psurname,Paddress,Ptown)"><mat-icon>ADD</mat-icon></button>
+    </mat-card>
+    
+    <mat-card>
+    <p *ngFor ="let patient of patientszzz">
+    {{patient.id}}
+    {{patient.name}}
+    {{patient.surname}}
+    {{patient.address}}
+    {{patient.town}}
+    
+    <button mat-raised-button color="primary" (click)="deletePatient(patient)">Delete </button>
+    <button mat-raised-button color="primary" (click)="editPatient(patient)">edit </button>
+    <button mat-raised-button color="primary" [routerLink]=" ['/patientDetails',patient.id]">view details</button>
+    </p>
+    </mat-card>

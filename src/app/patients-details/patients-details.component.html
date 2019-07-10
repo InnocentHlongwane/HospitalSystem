@@ -1,0 +1,15 @@
+<p>patients-details works!</p>
+
+<mat-card>
+    <p *ngIf ="patientID">
+    {{ patientID}}
+    {{PatientArr.name}}
+    {{PatientArr.surname}}
+    {{PatientArr.address}}
+    {{PatientArr.town}}
+    
+    <!-- <button mat-raised-button color="primary" (click)="deletePatient(patient)">Delete </button>
+    <button mat-raised-button color="primary" (click)="editPatient(patient)">edit </button> -->
+    <button mat-raised-button color="primary"[routerLink]=" ['/admin']" >BACK</button>
+    </p>
+    </mat-card>

@@ -1,0 +1,13 @@
+<p>appointment-details works!</p>
+<mat-card  *ngIf ="docID">
+        
+<p>
+    {{docID}}
+    {{docAppointment.date}}
+    {{docAppointment.Reason}}
+    
+</p>
+              
+             <button mat-fab color="primary" [routerLink]="['/doctor']" >Back</button>
+           
+             </mat-card>

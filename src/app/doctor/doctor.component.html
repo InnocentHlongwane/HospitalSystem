@@ -1,0 +1,37 @@
+<p>doctor works!</p>
+<mat-card>
+
+        <!-- patient ID:<mat-form-field>
+                <input  type="datetime" matInput placeholder="enter Patient ID" onfocus="this.value= ''" [(ngModel)] = "id">
+              </mat-form-field><br> -->
+        
+     doctor ID:<mat-form-field>
+            <input  type="datetime" matInput placeholder="enter doctor ID" onfocus="this.value= ''" [(ngModel)] = "docID">
+          </mat-form-field><br>
+
+        doctor Name:<mat-form-field>
+                <select matNativeControl required onfocus="this.value=''" [(ngModel)]="DoctorName">
+                        <option value = "Morgan">DR Morgan</option>
+                        <option value="Bethal">DR Bethal</option>
+                        <option value="Moagi">DR Moagi</option>
+                        <option value="MooKi">DR Mooki</option>
+                            </select>
+              </mat-form-field><br>
+            
+              <!-- doctor surname:<mat-form-field>
+                <input matInput placeholder="enter doctor surname" onfocus="this.value= ''" [(ngModel)] = "docSurname">
+            </mat-form-field><br> -->
+
+            doctor specialization:<mat-form-field>
+                    <select matNativeControl required onfocus="this.value=''" [(ngModel)]="DoctorName">
+                            <option value = "General practitioner">General practitioner</option>
+                            <option value="dentist">dentist</option>
+                            <option value="Optrometist">Optrometist</option>
+                            <option value="Neurologist">Neurologist</option>
+                                </select>
+                </mat-form-field><br>
+         
+                <button mat-raised-button color ="primary"(click)="addDoctor(docID,docName,docSurname,DocSpecialization)">SAVE</button>
+                <button mat-raised-button color="primary" [routerLink]=" ['/appointmentDetails/:docID']">view appointment Details</button>
+                <button mat-fab color="primary" [routerLink]="['/patient']" >Back</button>
+                <mat-card>

@@ -1,0 +1,13 @@
+<!-- <p>patient works!</p> -->
+<mat-card>
+        <p *ngFor ="let patient of patientsz">
+                {{patient.id}}
+                {{patient.name}}
+                {{patient.surname}}
+                {{patient.address}}
+                {{patient.town}}
+                
+                <button mat-raised-button color="primary" [routerLink]=" ['/appointment',patient.id]">view details</button>
+                <button mat-raised-button color="primary" [routerLink]=" ['/admin']">back</button>
+                </p>
+    </mat-card>
